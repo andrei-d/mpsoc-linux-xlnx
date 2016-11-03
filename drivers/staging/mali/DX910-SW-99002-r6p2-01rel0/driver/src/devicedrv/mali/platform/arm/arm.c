@@ -505,6 +505,11 @@ int mali_platform_device_init(struct platform_device *device)
 			mali_write_phys(0xC0010020, 0xA); /* Enable direct memory mapping for FPGA */
 		}
 	}
+#elif defined(CONFIG_ARCH_ZYNQ) || defined(CONFIG_ARCH_ZYNQMP)
+
+	MALI_DEBUG_PRINT(4, ("Registering Zynq/ZynqMP Mali-400 device\n"));
+	num_pp_cores = 2;
+
 #endif
 
 	/* After kernel 3.15 device tree will default set dev

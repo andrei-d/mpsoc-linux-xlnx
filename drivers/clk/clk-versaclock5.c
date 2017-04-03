@@ -654,7 +654,7 @@ static int vc5_probe(struct i2c_client *client,
 		/* IDT VC5 5P49V5933 and 5P49V5935 have built-in oscilator. */
 		vc5->pin_xin = clk_register_fixed_rate(&client->dev,
 						       "internal-xtal", NULL,
-						       0, 25000000);
+						       CLK_IS_ROOT, 25000000);
 		if (IS_ERR(vc5->pin_xin))
 			return PTR_ERR(vc5->pin_xin);
 		vc5->clk_mux_ins |= VC5_MUX_IN_XIN;

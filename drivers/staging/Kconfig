@@ -112,4 +112,6 @@ source "drivers/staging/fclk/Kconfig"
 
 source "drivers/staging/xilinx/Kconfig"
 
+source "drivers/staging/mali/Kconfig"
+
 endif # STAGING
